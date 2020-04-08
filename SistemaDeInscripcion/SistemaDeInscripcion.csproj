@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A988373C-FC90-4A74-BDED-2A267F841EC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaDeInscripcion</RootNamespace>
+    <AssemblyName>SistemaDeInscripcion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview1-19506-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CapaDatos\ClassAccount.cs" />
+    <Compile Include="CapaDatos\DB\ContextosDatosDB.cs" />
+    <Compile Include="CapaDatos\Cursos.cs" />
+    <Compile Include="CapaDatos\EstudianteCursos.cs" />
+    <Compile Include="CapaDatos\Estudiantes.cs" />
+    <Compile Include="CapaDatos\Usuarios.cs" />
+    <Compile Include="CapaNegociacion\ClassEncry.cs" />
+    <Compile Include="CapaNegociacion\ClassEnviarCorreo.cs" />
+    <Compile Include="CapaNegociacion\ClassErrorOConfirmacion.cs" />
+    <Compile Include="CapaNegociacion\ClassLogin.cs" />
+    <Compile Include="CapaNegociacion\ClassValidacionUtil.cs" />
+    <Compile Include="CapaNegociacion\ClassViewModel.cs" />
+    <Compile Include="CapaNegociacion\LogicMantCursos.cs" />
+    <Compile Include="CapaNegociacion\LogicMantEstudiantes.cs" />
+    <Compile Include="CapaNegociacion\LogicPublicarNotas.cs" />
+    <Compile Include="CapaPresentacion\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\InscripcionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\InscripcionEstudiantes.Designer.cs">
+      <DependentUpon>InscripcionEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoCursos.Designer.cs">
+      <DependentUpon>MantenimientoCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoEstudiantes.Designer.cs">
+      <DependentUpon>MantenimientoEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\MantenimientoUsuarios.Designer.cs">
+      <DependentUpon>MantenimientoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\PrublicarNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\PrublicarNotas.Designer.cs">
+      <DependentUpon>PrublicarNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\InscripcionEstudiantes.resx">
+      <DependentUpon>InscripcionEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\MantenimientoCursos.resx">
+      <DependentUpon>MantenimientoCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\MantenimientoEstudiantes.resx">
+      <DependentUpon>MantenimientoEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\MantenimientoUsuarios.resx">
+      <DependentUpon>MantenimientoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\PrublicarNotas.resx">
+      <DependentUpon>PrublicarNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.CapaPresentacion.Inicio.resources" />
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.CapaPresentacion.Login.resources" />
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.CapaPresentacion.MantenimientoCursos.resources" />
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.CapaPresentacion.MantenimientoEstudiantes.resources" />
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.CapaPresentacion.PantallaPrincipal.resources" />
+    <EmbeddedResource Include="obj\Debug\SistemaDeInscripcion.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\SistemaDeInscripcion.csproj.CopyComplete" />
+    <None Include="obj\Debug\SistemaDeInscripcion.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\SistemaDeInscripcion.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\SistemaDeInscripcion.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Resources\APs.PNG" />
+    <Content Include="bin\Resources\Close.png" />
+    <Content Include="bin\Resources\Dashboard.PNG" />
+    <Content Include="bin\Resources\icono-cliente.png" />
+    <Content Include="bin\Resources\logoUI.png" />
+    <Content Include="bin\Resources\logoUI2.png" />
+    <Content Include="bin\Resources\maximize.png" />
+    <Content Include="bin\Resources\maximize2.png" />
+    <Content Include="bin\Resources\maximize3.png" />
+    <Content Include="bin\Resources\Membresia.PNG" />
+    <Content Include="bin\Resources\menu.png" />
+    <Content Include="bin\Resources\menu2.png" />
+    <Content Include="bin\Resources\Minimize.png" />
+    <Content Include="bin\Resources\Minimize1.png" />
+    <Content Include="bin\Resources\new logo.png" />
+    <Content Include="bin\Resources\new logo1.png" />
+    <Content Include="bin\Resources\new logo2.png" />
+    <Content Include="bin\Resources\new logo3.png" />
+    <Content Include="bin\Resources\new logo4.png" />
+    <Content Include="bin\Resources\new logo5.png" />
+    <Content Include="bin\Resources\Normal.png" />
+    <Content Include="bin\Resources\perfil.png" />
+    <Content Include="bin\Resources\Planes.PNG" />
+    <Content Include="bin\Resources\satellite-dish %281%29.png" />
+    <Content Include="bin\Resources\satellite-dish.png" />
+    <Content Include="bin\Resources\shut-down.png" />
+    <Content Include="obj\Debug\SistemaDeInscripcion.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SistemaDeInscripcion.exe" />
+    <Content Include="obj\Debug\SistemaDeInscripcion.pdb" />
+    <Content Include="Resources\APs.PNG" />
+    <Content Include="Resources\b.png" />
+    <Content Include="Resources\boss_man-128.png" />
+    <Content Include="Resources\Close.png" />
+    <Content Include="Resources\Dashboard.PNG" />
+    <Content Include="Resources\descarga.png" />
+    <Content Include="Resources\descarga1.png" />
+    <Content Include="Resources\icon cerrar2.png" />
+    <Content Include="Resources\icon cerrar21.png" />
+    <Content Include="Resources\icon cerrar22.png" />
+    <Content Include="Resources\icon minimizar.png" />
+    <Content Include="Resources\iconnn.png" />
+    <Content Include="Resources\icono-cliente.png" />
+    <Content Include="Resources\logoUI.png" />
+    <Content Include="Resources\logoUI2.png" />
+    <Content Include="Resources\maximize.png" />
+    <Content Include="Resources\maximize2.png" />
+    <Content Include="Resources\maximize3.png" />
+    <Content Include="Resources\Membresia.PNG" />
+    <Content Include="Resources\menu.png" />
+    <Content Include="Resources\menu2.png" />
+    <Content Include="Resources\Minimize.png" />
+    <Content Include="Resources\Minimize1.png" />
+    <Content Include="Resources\Mobile-Menu-Icon.png" />
+    <Content Include="Resources\new logo.png" />
+    <Content Include="Resources\new logo1.png" />
+    <Content Include="Resources\new logo2.png" />
+    <Content Include="Resources\new logo3.png" />
+    <Content Include="Resources\new logo4.png" />
+    <Content Include="Resources\new logo5.png" />
+    <Content Include="Resources\Normal.png" />
+    <Content Include="Resources\perfil.png" />
+    <Content Include="Resources\Planes.PNG" />
+    <Content Include="Resources\prodcutos.png" />
+    <Content Include="Resources\prodcutos1.png" />
+    <Content Include="Resources\producto.png" />
+    <Content Include="Resources\salir.png" />
+    <Content Include="Resources\salir1.png" />
+    <Content Include="Resources\satellite-dish %281%29.png" />
+    <Content Include="Resources\satellite-dish.png" />
+    <Content Include="Resources\shut-down.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0-preview1-19506-01\build\EntityFramework.targets')" />
+</Project>
